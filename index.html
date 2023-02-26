@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <title>ahmedYousif😘</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bignumber.js/bignumber.min.js"></script>
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+   
+    <div id="app">
+        <div  class="container">
+
+            <h1>converter</h1>
+            <h1 class="con">to floating</h1>
+            <!-- <h2>Converta valores para diversos tipos de moedas.</h2> -->
+            <div class="imersao-dev">
+                <p>{{m2}}</p>
+                <span class="s1">{{sign2}}</span>
+                <span class="s2">{{exponent2}}</span>
+                <span class="s3">{{mantissa2}}</span>
+            </div>
+
+            <p>decimal</p>
+            <input id="valor" type="text" maxlength="10" placeholder="enter decimal" v-model="m2">
+
+            
+
+
+            <div class="converter">
+                <p @click="convert2">Convert!</p>
+            </div>
+
+            
+            <h1 class="con">to decimal</h1>
+            <!-- <h2>Converta valores para diversos tipos de moedas.</h2> -->
+            <div class="imersao-dev">
+                <p>{{sign}}  {{exponent}}  {{mantissa}}</p>
+                <span>{{m}}</span>
+            </div>
+
+            <p>sign</p>
+            <input id="valor" type="text" maxlength="1" placeholder="1 or 0" v-model="sign">
+
+            <p>exponent</p>
+            <input  type="text" maxlength="8" placeholder="8 bits" v-model="exponent">
+
+
+            <p>mantissa</p>
+            <input type="text" maxlength="23" placeholder="23 bits" v-model="mantissa">
+
+
+            <div class="converter">
+                <p @click="convert">Convert!</p>
+            </div>
+
+            
+
+            <div class="valor-final">
+                <span id="valor-final">AHMEDYSF100🥵</span>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

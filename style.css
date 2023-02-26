@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,600;0,700;1,200;1,300;1,600;1,700&display=swap");
+body {
+  background: linear-gradient(135deg, #3EECAC 0%, #EE74E1 100%) no-repeat center center fixed;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1236px) {
+  body .container {
+    top: 73% !important;
+  }
+}
+
+@media only screen and (max-width: 1051px) {
+  body .container {
+    top: 78% !important;
+  }
+}
+
+@media only screen and (max-width: 654px) {
+  body .container {
+    top: 75% !important;
+  }
+}
+
+@media only screen and (max-width: 2000px) {
+  body .container .con {
+    line-height: 2;
+    font-size: 2.5em !important;
+    color: #352020;
+  }
+}
+
+body .container .imersao-dev .s1 {
+  background-color: #E55249;
+}
+
+body .container .imersao-dev .s2 {
+  background-color: #68D99F;
+}
+
+body .container .imersao-dev .s3 {
+  background-color: #6C7FF0;
+}
+
+
+body .container .con{
+font-size: 3em;
+font-weight:550;
+}
+
+body .container {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2em 2em;
+  border-radius: 1em;
+  text-align: center;
+}
+
+
+
+body .container h1 {
+  font-size: 3em;
+  margin: 0;
+  line-height: 75%;
+}
+
+body .container h2 {
+  font-size: 1.4em;
+  margin: 10px 10px;
+}
+
+body .container .imersao-dev {
+  font-size: 1.4em;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+}
+
+body .container .imersao-dev span {
+  background-color: orange;
+  padding: 0 3px 0 3px;
+}
+
+body .container p {
+  margin: 5px;
+}
+
+body .container input {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-style: none;
+  border-radius: .2em;
+  padding: 5px 0 5px 0;
+  text-align: center;
+}
+
+body .container *:focus {
+  outline: none;
+}
+
+body .container .converter {
+  font-weight: 600;
+  margin: 15px auto 0 auto;
+  background-color: #3EECAC;
+  width: min-content;
+  border-radius: .5em;
+  cursor: pointer;
+}
+body .container .converter:hover{
+  background-color: #19d38e;
+  color: #fff;
+}
+
+body .container .valor-final {
+  margin: auto;
+  font-style: italic;
+  padding: 0;
+  border-bottom: 5px solid green;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+/*# sourceMappingURL=style.css.map */
