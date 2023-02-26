@@ -19,9 +19,10 @@ const app = Vue.createApp({
     methods: {
         convert2() {
 
-            const a = new BigNumber(this.m2);
+            let a = new BigNumber(this.m2);
             if (a<0) {
                 this.sign2=1
+                a=a*-1
             }else{this.sign2=0}
             const num = Number(a);
             if (Number.isInteger(num)) {
@@ -49,7 +50,7 @@ const app = Vue.createApp({
                 console.log(x + " " + y)
                
                 const num2 = x;
-                const numString = num2.toFixed((y-1)); // Round to 4 decimal places
+                const numString = num2.toFixed(kk) // Round to 4 decimal places
                 const decimalPart = numString.substring(numString.indexOf(".") + 1);
                 console.log(decimalPart); // Output: "1001"
                 this.mantissa2=decimalPart
