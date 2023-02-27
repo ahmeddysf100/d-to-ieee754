@@ -55,7 +55,7 @@ const app = Vue.createApp({
                 const numString = num2.toFixed(kk) // Round to 4 decimal places
                 const decimalPart = numString.substring(numString.indexOf(".") + 1);
               //  console.log(decimalPart); // Output: "1001"
-              
+                this.mantissa2 = decimalPart
 
             } else {
                 let binaryF = num.toString(2)
