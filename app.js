@@ -20,10 +20,12 @@ const app = Vue.createApp({
         convert2() {
 
             let a = new BigNumber(this.m2);
-            if (a<0) {
-                this.sign2=1
-                a=a*-1
-            }else{this.sign2=0}
+            if (a < 0) {
+                this.sign2 = 1
+                a = a * -1
+            } else {
+                this.sign2 = 0
+            }
             const num = Number(a);
             if (Number.isInteger(num)) {
 
@@ -38,8 +40,8 @@ const app = Vue.createApp({
                     binary = binary.dividedBy(10)
 
                 }
-                binary2 = binary.toNumber()
-                console.log(binary2)
+              // let binary2 = binary.toNumber()
+              //  console.log(binary2)
                 let bais = 127 + (lengthArr - 1)
                 //console.log(bais)
                 this.exponent2 = bais.toString(2)
@@ -47,15 +49,66 @@ const app = Vue.createApp({
                 let x = new BigNumber(k)
                 let kk = lengthArr - 1
                 let y = new BigNumber(kk)
-                console.log(x + " " + y)
-               
+              //  console.log(x + " " + y)
+
                 const num2 = x;
                 const numString = num2.toFixed(kk) // Round to 4 decimal places
                 const decimalPart = numString.substring(numString.indexOf(".") + 1);
-                console.log(decimalPart); // Output: "1001"
-                this.mantissa2=decimalPart
+              //  console.log(decimalPart); // Output: "1001"
+              
 
             } else {
+                let binaryF = num.toString(2)
+               // console.log(binaryF)
+                let number = binaryF.toString();
+                let pointIndex = number.indexOf('.'); // get the index of the decimal point
+                let leftSubstring = number.substring(0, pointIndex); // get the substring of digits to the left of the decimal point
+                let hasLeftOne = leftSubstring.includes('1'); // check if the substring contains a '1'
+              //  console.log(hasLeftOne); // logs 'true' if there is a '1' to the left of the decimal point, otherwise logs 'false'
+
+                if (hasLeftOne == true) {
+                    let pointIndex1 = number.indexOf('.'); // get the index of the decimal point
+                    let leftSubstring1 = number.substring(0, pointIndex); // get the substring of digits to the left of the decimal point
+                    let lastOneIndex = leftSubstring1.indexOf('1'); // get the index of the first '1' in the substring
+                 //   console.log(lastOneIndex)
+                    pointIndex1=lastOneIndex+1
+                    // reassemble the number with the new position of the decimal point
+                    let result = number.substring(0, pointIndex1) + '.' + number.substring(pointIndex1).replace('.', '');
+                  // console.log(result); 
+                   let pointIndexF = result.substring(1,25).replace(".",""); 
+                   this.mantissa2=pointIndexF
+                  // console.log(pointIndexF)
+                   bais1= leftSubstring1.length-1
+                  // console.log(bais1)
+                   bais1=bais1+127
+                   this.exponent2=bais1.toString(2)
+                  // console.log(this.exponent2)
+
+                } else {
+                 let numbersize=number.length
+                 let pointIndex2=(number.indexOf("."))+1
+                 let righttSubstring1 = number.substring(pointIndex2,numbersize); // get the substring of digits to the right of the decimal point
+                //console.log(righttSubstring1)
+                 let index1=righttSubstring1.indexOf("1")
+                 let bais2=-(index1+1)+127
+                 //console.log(bais2)
+                let bais3=bais2.toString(2)
+                if(bais3.length<8){
+                    bais3='0'+bais3.substring(0)
+                }
+                 this.exponent2=bais3
+                 result1=righttSubstring1.substring(index1,(index1+1))+"."+righttSubstring1.substring(index1+1).replace(".","")
+                 //console.log(result1)
+                let index0=result1.indexOf(".")
+                result1=result1.substring((index0+1),25)
+                if(result1==0){
+                    result1="000...."
+                }
+                //console.log(result1)
+                this.mantissa2=result1
+
+                }
+
 
 
             }
