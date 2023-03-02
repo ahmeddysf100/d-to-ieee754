@@ -78,7 +78,7 @@ const app = Vue.createApp({
                    let pointIndexF = result.substring(1,25).replace(".",""); 
                    this.mantissa2=pointIndexF
                   // console.log(pointIndexF)
-                   bais1= leftSubstring1.length-1
+                   let bais1= leftSubstring1.length-1
                   // console.log(bais1)
                    bais1=bais1+127
                    bais1 = bais1.toString(2)
