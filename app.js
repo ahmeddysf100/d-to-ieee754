@@ -81,7 +81,11 @@ const app = Vue.createApp({
                    bais1= leftSubstring1.length-1
                   // console.log(bais1)
                    bais1=bais1+127
-                   this.exponent2=bais1.toString(2)
+                   bais1 = bais1.toString(2)
+                    if (bais1.length < 8) {
+                        bais1 = '0' + bais1.substring(0)
+                    }
+                    this.exponent2 = bais1
                   // console.log(this.exponent2)
 
                 } else {
